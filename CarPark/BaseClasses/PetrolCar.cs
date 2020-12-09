@@ -5,7 +5,8 @@ using System.Text;
 
 namespace CarPark.BaseClasses
 {
-    class PetrolCar : Car, IPetrolCar
+    [Serializable]
+    public class PetrolCar : Car, IPetrolCar
     {
         public double CanVolume { get; set; }
         public double EngineVolume { get; set ; }
@@ -17,7 +18,7 @@ namespace CarPark.BaseClasses
             {
                 return _maxDistanse;
             }
-            protected set 
+            set 
             {
                 //exception??
                 _maxDistanse = value;
@@ -47,6 +48,10 @@ namespace CarPark.BaseClasses
         public override string ToString()
         {
             return base.ToString() + "\nCan volume: " + CanVolume + "\nEngine volume: " + EngineVolume + "\nFuel for 100km" + FuelConsumptionFor100km;
+        }
+        public PetrolCar()
+        {
+
         }
     }
 }

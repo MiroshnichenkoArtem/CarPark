@@ -5,7 +5,8 @@ using System.Text;
 
 namespace CarPark.BaseClasses
 {
-    class RentablePetrolCar : PetrolCar,IRentable
+    [Serializable]
+    public class RentablePetrolCar : PetrolCar,IRentable
     {
         public bool IsRentingNow { get; set; }
 
@@ -33,6 +34,10 @@ namespace CarPark.BaseClasses
         public override string ToString()
         {
             return base.ToString() + "\nIs renting now: " + IsRentingNow + " \nDailyPayment: ";
+        }
+        public RentablePetrolCar()
+        {
+
         }
     }
 }

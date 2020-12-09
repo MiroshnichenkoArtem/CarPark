@@ -1,9 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Xml.Serialization;
 
 namespace CarPark.BaseClasses
 {
+    [Serializable]
+    [XmlInclude(typeof(ElectricCar))]
+    [XmlInclude(typeof(PetrolCar))]
+    [XmlInclude(typeof(RentableElectricCar))]
+    [XmlInclude(typeof(RentablePetrolCar))]
+    [XmlInclude(typeof(PassengerPetrolTaxi))]
+   
     public abstract class Car
     {
         public string CarBrand { get; set; }
@@ -17,7 +25,10 @@ namespace CarPark.BaseClasses
         //public abstract double MaxDistanse { get; private set; }
        
         public double AcceleretionTo100KmphTime { get; set; }
-        public abstract string GetCarInfo();
+        public virtual string GetCarInfo()
+        {
+            return ToString();
+        }
         //public abstract double CalculateMaxDistanse();
 
         public Car(string carBrand, string carModel, string vin,
@@ -38,6 +49,10 @@ namespace CarPark.BaseClasses
         {
             return "Car Model: " + CarBrand + " \nCarModel " + CarModel + " \nVIN Number: " + VIN + " \nYear Of Issue: " +
                    YearOfIssue + "\nMilleage: " + Milleage + " \nCar Cost: " + CarCost + " \nAmount Of Passengers: " + AmountOfPassengers;
+        }
+        public Car()
+        {
+
         }
     }
 }

@@ -5,8 +5,10 @@ using System.Text;
 
 namespace CarPark.BaseClasses
 {
+    [Serializable]
     public class RentableElectricCar : ElectricCar, IRentable
     {
+        
        
         public bool IsRentingNow  { get; set; }
        
@@ -14,7 +16,7 @@ namespace CarPark.BaseClasses
         {
             get;set;
         }
-        private double _maxDistanse;
+       
 
         public double CalculateRentPayment(IRentable car, int days)
         {
@@ -35,6 +37,10 @@ namespace CarPark.BaseClasses
         public override string ToString()
         {
             return base.ToString() + "\nIs renting now: " + IsRentingNow + " \nDailyPayment: ";
+        }
+        public RentableElectricCar()
+        {
+
         }
     }
 }

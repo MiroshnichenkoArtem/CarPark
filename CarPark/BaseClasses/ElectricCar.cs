@@ -5,6 +5,7 @@ using System.Text;
 
 namespace CarPark.BaseClasses
 {
+    [Serializable]
     public class ElectricCar : Car, IElectricCar
     {
         public double BatteryCapacity { get; set ; }
@@ -18,7 +19,7 @@ namespace CarPark.BaseClasses
             {
                 return _maxDistanse;
             }
-            protected set
+            set
             {
                 _maxDistanse = value;
             } 
@@ -48,6 +49,10 @@ namespace CarPark.BaseClasses
         {
             return base.ToString() + " \nBatteryCapasity " + BatteryCapacity + " \nEnergyFor100Km: " + EnergyFor100Km
                                    + " \nChargeTime: " + ChargeTime;
+        }
+        public ElectricCar()
+        {
+
         }
     }
 }

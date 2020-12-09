@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CarPark.Interfaces
 {
-    interface IElectricCar
+    public interface IElectricCar
     {
         double BatteryCapacity { get; set; }
         double EnergyFor100Km { get; set; }
