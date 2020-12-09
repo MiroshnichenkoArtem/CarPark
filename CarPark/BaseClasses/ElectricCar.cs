@@ -5,13 +5,25 @@ using System.Text;
 
 namespace CarPark.BaseClasses
 {
-    public class ElecticCar : Car, IElectircCar
+    public class ElectricCar : Car, IElectricCar
     {
         public double BatteryCapacity { get; set ; }
         public double EnergyFor100Km { get; set;}
         public double ChargeTime { get ; set; }
 
-        public override double CalculateMaxDistanse()
+        private double _maxDistanse;
+
+        public  double MaxDistanse {
+            get
+            {
+                return _maxDistanse;
+            }
+            protected set
+            {
+                _maxDistanse = value;
+            } 
+        }
+        protected  double CalculateMaxDistanse()
         {
             return BatteryCapacity / EnergyFor100Km;
         }
@@ -20,7 +32,7 @@ namespace CarPark.BaseClasses
         {
             return ToString();
         }
-        public ElecticCar(string carBrand, string carModel, string vin,
+        public ElectricCar(string carBrand, string carModel, string vin,
                       int yearOfIssue, double milleage, double carCost,
                       int amountOfPassengers, double acceleretionTo100KmphTime, double batteryCapacity,
                       double energyFor100Km, int chargeTime)
@@ -29,12 +41,13 @@ namespace CarPark.BaseClasses
             BatteryCapacity = batteryCapacity;
             EnergyFor100Km = energyFor100Km;
             ChargeTime = chargeTime;
+            MaxDistanse = CalculateMaxDistanse();
         }
 
         public override string ToString()
         {
-            return base.ToString() + " BatteryCapasity " + BatteryCapacity + " EnergyFor100Km: " + EnergyFor100Km
-                                   + " ChargeTime: " + ChargeTime;
+            return base.ToString() + " \nBatteryCapasity " + BatteryCapacity + " \nEnergyFor100Km: " + EnergyFor100Km
+                                   + " \nChargeTime: " + ChargeTime;
         }
     }
 }

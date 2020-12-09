@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarPark.BaseClasses;
+using System;
 
 namespace CarPark
 {
@@ -6,7 +7,8 @@ namespace CarPark
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            RentingCenter center = new RentingCenter();
+            center.OutputCars();
         }
     }
 }
