@@ -9,14 +9,21 @@ namespace CarPark
     {
         static void Main(string[] args)
         {
-            List<Car> cars = new List<Car>();
+            //  List<Car> cars = new List<Car>();
+
+            //  Serializer serializer = new Serializer();
+            //  PassengerPetrolTaxi taxi = new PassengerPetrolTaxi("BMW", "X-5", "01234", 2001, 2500.5, 35000.25, 3 ,4.3, 5.6, 50.4, 3.5, 10.5);
+            //  cars.Add(taxi);
+            //  RentableElectricCar rentableElectricCar = new RentableElectricCar("Tesla", "Model Y", "43210", 2018, 12.50, 18000.50, 3, 4.5, 2500.25, 12.23, 23);
+            //  cars.Add(rentableElectricCar);
+            ////  RentablePetrolCar rentablePetrol = new RentablePetrolCar("") 
+            //  Serializer.SerializeCars(cars);
+            CarPark carPark = new CarPark();
+            //carPark.SortCarsByFuelConsumption();
+            //carPark.FindCarsBySpeedRange(0,4.3);
             
-            Serializer serializer = new Serializer();
-            PassengerPetrolTaxi taxi = new PassengerPetrolTaxi("brand", "model", "123", 12, 123.3, 2333.33, 21 ,4.3, 123.4, 12.4, 23.3, 1.3);
-            cars.Add(taxi);
-            RentableElectricCar rentableElectricCar = new RentableElectricCar("asd", "asd", "asd", 123, 12.3, 12.3, 2, 23.4, 23.4, 12.23, 23);
-            cars.Add(rentableElectricCar);
-            Serializer.SerializeCars(cars);
+           // carPark.OutputAllCars();
+            
            
         }
     }

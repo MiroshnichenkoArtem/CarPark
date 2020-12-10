@@ -48,7 +48,7 @@ namespace CarPark.BaseClasses
         public override string ToString()
         {
             return "Car Model: " + CarBrand + " \nCarModel " + CarModel + " \nVIN Number: " + VIN + " \nYear Of Issue: " +
-                   YearOfIssue + "\nMilleage: " + Milleage + " \nCar Cost: " + CarCost + " \nAmount Of Passengers: " + AmountOfPassengers;
+                   YearOfIssue + "\nMilleage: " + Milleage + " \nCar Cost: " + CarCost + " \nAmount Of Passengers: " + AmountOfPassengers + "\nAcceleration:" + AcceleretionTo100KmphTime ;
         }
         public Car()
         {

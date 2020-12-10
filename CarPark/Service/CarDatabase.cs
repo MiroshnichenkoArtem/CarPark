@@ -25,13 +25,13 @@ namespace CarPark.BaseClasses
             return _allCars.Where(i => i is ITaxiCar);
         }
 
-        public IEnumerable<IElectricCar> GetAllElectricCars()
+        public IEnumerable<Car> GetAllElectricCars()
         {
-            return (IEnumerable<IElectricCar>)_allCars.Where(i => i is IElectricCar);
+            return _allCars.Where(i => i is IElectricCar);
         } 
-        public IEnumerable<IPetrolCar> GetAllPetrolCars()
+        public IEnumerable<Car> GetAllPetrolCars()
         {
-            return (IEnumerable<IPetrolCar>)_allCars.Where(i => i is IPetrolCar);
+            return _allCars.Where(i => i is IPetrolCar);
         }
    }
 }

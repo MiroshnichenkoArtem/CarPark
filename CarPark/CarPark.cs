@@ -10,8 +10,8 @@ namespace CarPark
     public class CarPark
     {
         public  IEnumerable<Car> AllCars { get; private set; }
-        public IEnumerable<IElectricCar> ElectricCars { get; private set; }
-        public IEnumerable<IPetrolCar> PetrolCars { get; private set; }
+        public IEnumerable<Car> ElectricCars { get; private set; }
+        public IEnumerable<Car> PetrolCars { get; private set; }
 
         
 
@@ -32,13 +32,11 @@ namespace CarPark
 
         public void SortCarsByFuelConsumption()
         {
-            var sortedElCars = (IEnumerable<Car>) ElectricCars.OrderBy(o => o.EnergyFor100Km);
-            var sortedPetrolCars = (IEnumerable<Car>) PetrolCars.OrderBy(o => o.FuelConsumptionFor100km);
-            var concatenatedCars = sortedElCars.Concat(sortedPetrolCars);
-            foreach(var car in concatenatedCars)
-            {
-                Console.WriteLine(car.GetCarInfo());
-            }
+            
+            var sortedElCars = ElectricCars.Cast<IElectricCar>().OrderBy(o => o.EnergyFor100Km).Cast<Car>();
+            var sortedPetrolCars = (IEnumerable<Car>)PetrolCars.Cast<IPetrolCar>().OrderBy(o => o.FuelConsumptionFor100km).Cast<Car>();
+            AllCars = sortedElCars.Concat(sortedPetrolCars);
+
         }
         
         public void FindCarsBySpeedRange(double min, double max)
