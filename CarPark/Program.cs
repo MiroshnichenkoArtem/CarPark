@@ -19,12 +19,14 @@ namespace CarPark
             ////  RentablePetrolCar rentablePetrol = new RentablePetrolCar("") 
             //  Serializer.SerializeCars(cars);
             CarPark carPark = new CarPark();
-            //carPark.SortCarsByFuelConsumption();
-            //carPark.FindCarsBySpeedRange(0,4.3);
-            
-           // carPark.OutputAllCars();
-            
-           
+           // carPark.SortCarsByFuelConsumption();
+            //carPark.OutputAllCars();
+
+            //carPark.FindCarsBySpeedRange(0,5);
+            Console.WriteLine(carPark.CalculateTotalPriceOfCars());
+            // carPark.OutputAllCars();
+
+
         }
     }
 }

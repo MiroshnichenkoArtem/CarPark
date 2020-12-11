@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<ArrayOfCar xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Car xsi:type="PassengerPetrolTaxi">
+    <CarBrand>BMW</CarBrand>
+    <CarModel>X-5</CarModel>
+    <VIN>01234</VIN>
+    <YearOfIssue>2001</YearOfIssue>
+    <Milleage>2500.5</Milleage>
+    <CarCost>35000.25</CarCost>
+    <AmountOfPassengers>3</AmountOfPassengers>
+    <AcceleretionTo100KmphTime>4.3</AcceleretionTo100KmphTime>
+    <CanVolume>5.6</CanVolume>
+    <EngineVolume>50.4</EngineVolume>
+    <FuelConsumptionFor100km>3.5</FuelConsumptionFor100km>
+    <MaxDistanse>1.5999999999999999</MaxDistanse>
+    <CostPerUnit>10.5</CostPerUnit>
+  </Car>
+  <Car xsi:type="RentableElectricCar">
+    <CarBrand>Tesla</CarBrand>
+    <CarModel>Model Y</CarModel>
+    <VIN>43210</VIN>
+    <YearOfIssue>2018</YearOfIssue>
+    <Milleage>12.5</Milleage>
+    <CarCost>18000.5</CarCost>
+    <AmountOfPassengers>3</AmountOfPassengers>
+    <AcceleretionTo100KmphTime>4.5</AcceleretionTo100KmphTime>
+    <BatteryCapacity>2500.25</BatteryCapacity>
+    <EnergyFor100Km>12.23</EnergyFor100Km>
+    <ChargeTime>23</ChargeTime>
+    <MaxDistanse>204.4358135731807</MaxDistanse>
+    <IsRentingNow>false</IsRentingNow>
+    <DailyPayment>0</DailyPayment>
+  </Car>
+</ArrayOfCar>
